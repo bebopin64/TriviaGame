@@ -4,6 +4,7 @@ var score = 0;
 var questionIndex = 0;
 var index = 0;
 var playAgain = true;
+var timeRemaining = $("#timeRemaining");
 var question = $("#questionId");
 var answer = $("#answerId");
 var trivia = [
@@ -51,11 +52,11 @@ var trivia = [
 ];
 
 var timer = {
-  time: 30,
+  time: 15,
 
   reset: function() {
-    timer.time = 30;
-    $("#timeRemaining").html("30");
+    timer.time = 15;
+    timeRemaining.html(timer.time);
   },
 
   start: function() {
@@ -68,7 +69,7 @@ var timer = {
 
   count: function() {
     timer.time--;
-    $("#timeRemaining").html(+timer.time);
+    timeRemaining.html(+timer.time);
     if (timer.time === 0) {
     	timer.stop();
 		question.empty();
@@ -121,7 +122,7 @@ function questionWrong() {
 }
 
 function newQuestion() {
-	if(index === 6) {
+	if(index === trivia.length) {
 		timer.stop();
 		setTimeout(function() {$("#questionId").html("<h1>You got " + score + " right.</h1>");}, 10);
 		setTimeout(function() {reset();}, 5000);
@@ -136,9 +137,7 @@ function newQuestion() {
 }
 
 window.onload = function() {
-	$(document).on("click", ".right", questionRight);
-	$(document).on("click", ".wrong", questionWrong);
-	$(document).on("click", ".start", function() {start();});
+	$(document).on("click", ".right", questionRight).on("click", ".wrong", questionWrong).on("click", ".start", function() {start();});
 };
 
 function start() {
