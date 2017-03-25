@@ -6,44 +6,44 @@ var index = 0;
 var playAgain = true;
 var trivia = [
 	{q: "<h1>What is Will's middle name? </h1>",
-	a1: "<h2 class='wrong'>1. Emory</h2>",
-	a2: "<h2 class='right'>2. Bruce</h2>",
-	a3: "<h2 class='wrong'>3. Jonathon</h2>",
+	a1: "<h2 class='wrong' style='cursor: pointer;'>1. Emory</h2>",
+	a2: "<h2 class='right' style='cursor: pointer;'>2. Bruce</h2>",
+	a3: "<h2 class='wrong' style='cursor: pointer;'>3. Jonathon</h2>",
 	r: "Correct!  His full name is William Bruce Garlick",
 	w: "No, you idiot, it's Bruce."},
 
 	{q: "<h1>What is will's favorite NBA team?</h1>",
-	a1: "<h2 class='right'>1. The Spurs</h2>",
-	a2: "<h2 class='wrong'>2. The Mavericks</h2>",
-	a3: "<h2 class='wrong'>3. The Heat</h2>",
+	a1: "<h2 class='right' style='cursor: pointer;'>1. The Spurs</h2>",
+	a2: "<h2 class='wrong' style='cursor: pointer;'>2. The Mavericks</h2>",
+	a3: "<h2 class='wrong' style='cursor: pointer;'>3. The Heat</h2>",
 	r: "Yup, he likes The Spurs because they're obviously the best.",
 	w: "They suck.  The answer is obviously The Spurs."},
 
 	{q: "<h1>What was the make of Will's first car?</h1>",
-	a1: "<h2 class='wrong'>1. Volkswagen</h2>",
-	a2: "<h2 class='right'>2. Mitsubishi</h2>",
-	a3: "<h2 class='wrong'>3. BMW</h2>",
+	a1: "<h2 class='wrong' style='cursor: pointer;'>1. Volkswagen</h2>",
+	a2: "<h2 class='right' style='cursor: pointer;'>2. Mitsubishi</h2>",
+	a3: "<h2 class='wrong' style='cursor: pointer;'>3. BMW</h2>",
 	r: "Huzzah, you got it right!",
 	w: "Uh no.  Will's parents were way to cheap to buy him a German car. Do you even know anything?"},
 
 	{q: "<h1>What's Will's favorite color?</h1>",
-	a1: "<h2 class='wrong'>1. Red</h2>",
-	a2: "<h2 class='wrong'>2. Green</h2>",
-	a3: "<h2 class='wrong'>3. Purple</h2>",
+	a1: "<h2 class='wrong' style='cursor: pointer;'>1. Red</h2>",
+	a2: "<h2 class='wrong' style='cursor: pointer;'>2. Green</h2>",
+	a3: "<h2 class='wrong' style='cursor: pointer;'>3. Purple</h2>",
 	r: "nobody can get this right",
 	w: "He doesn't have a favorite color you dumb idiot."},
 
 	{q: "<h1>Where would Will rather vacation?</h1>",
-	a1: "<h2 class='wrong'>1. Monaco, because he's a classy fuck.</h2>",
-	a2: "<h2 class='wrong'>2. Cancun, because he loves partying and skin cancer.</h2>",
-	a3: "<h2 class='right'>3. Rocky Mountains, because he shreds some mean gnar-gnar.</h2>",
+	a1: "<h2 class='wrong' style='cursor: pointer;'>1. Monaco, because he's a classy fuck.</h2>",
+	a2: "<h2 class='wrong' style='cursor: pointer;'>2. Cancun, because he loves partying and skin cancer.</h2>",
+	a3: "<h2 class='right' style='cursor: pointer;'>3. Rocky Mountains, because he shreds some mean gnar-gnar.</h2>",
 	r: "Lucky guess...",
 	w: "While he is classy and does love to party, Will prefers to take his rare vacations getting a little snowboarding in."},
 
 	{q: "<h1>If you're playing this dumb game, does that also make you dumb?</h1>",
-	a1: "<h2 class='right'>1. Yes</h2>",
-	a2: "<h2 class='right'>2. Yes</h2>",
-	a3: "<h2 class='right'>3. Yes</h2>",
+	a1: "<h2 class='right' style='cursor: pointer;'>1. Yes</h2>",
+	a2: "<h2 class='right' style='cursor: pointer;'>2. Yes</h2>",
+	a3: "<h2 class='right' style='cursor: pointer;'>3. Yes</h2>",
 	r: "Thanks for playing, dummy!",
 	w: "Thanks for playing, dummy!"}
 ];
@@ -139,4 +139,4 @@ $("#questionId").append(trivia[0].q);
 $("#answerId").append(trivia[0].a1);
 $("#answerId").append(trivia[0].a2);
 $("#answerId").append(trivia[0].a3);
-timer.start();
+// timer.start();
