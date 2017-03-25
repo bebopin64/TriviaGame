@@ -138,8 +138,14 @@ function newQuestion() {
 window.onload = function() {
 	$(document).on("click", ".right", questionRight);
 	$(document).on("click", ".wrong", questionWrong);
+	$(document).on("click", ".start", function() {start();});
 };
 
-question.append(trivia[0].q);
-answer.append(trivia[0].a1).append(trivia[0].a2).append(trivia[0].a3);
-timer.start();
+function start() {
+	question.empty();
+	question.append(trivia[0].q);
+	answer.append(trivia[0].a1).append(trivia[0].a2).append(trivia[0].a3);
+	timer.start();
+}
+
+question.append("<h1 class='start' style='cursor: pointer;'>Click here to start</h1>");
