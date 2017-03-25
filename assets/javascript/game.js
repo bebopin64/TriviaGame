@@ -139,4 +139,4 @@ $("#questionId").append(trivia[0].q);
 $("#answerId").append(trivia[0].a1);
 $("#answerId").append(trivia[0].a2);
 $("#answerId").append(trivia[0].a3);
-// timer.start();
+timer.start();
