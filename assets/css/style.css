@@ -1,5 +1,10 @@
-.header {
-
+.paper {
+	width: 60%; 
+	height: 702px; 
+	margin: 60px auto; 
+	padding-top: 66px; 
+	background-image: url(../images/minBackground.png); 
+	padding-left: 80px;
 }
 
 .time {
@@ -10,8 +15,8 @@
 	background-image: url("../images/timer.png");
 	position: absolute;
 	z-index: 10;
-	left: 65%;
-	top: 90px;
+	left: 1.4%;
+	top: 0px;
 }
 
 .timeNumbers {
@@ -21,12 +26,23 @@
 	font-size: 50px;
 }
 
+.header {
+	font-size: 19px;
+}
+
 .question {
 	position: relative;
 	margin-bottom: -10px;
 	margin-top: 49px;
+	line-height: 295%;
 }
 
 .answer {
 	line-height: 170%;
+}
+
+body {
+	background-image: url('../images/purty_wood.png'); 
+	font-family: 'Just Another Hand', cursive; 
+	letter-spacing: 4px;
 }

@@ -4,6 +4,8 @@ var score = 0;
 var questionIndex = 0;
 var index = 0;
 var playAgain = true;
+var question = $("#questionId");
+var answer = $("#answerId");
 var trivia = [
 	{q: "<h1>What is Will's middle name? </h1>",
 	a1: "<h2 class='wrong' style='cursor: pointer;'>1. Emory</h2>",
@@ -67,11 +69,14 @@ var timer = {
   count: function() {
     timer.time--;
     $("#timeRemaining").html(+timer.time);
-    if (timer.time === -1) {
-    	alert("You ran out of time. How the fuck do you run out of time? You had 30 whole seconds!")
+    if (timer.time === 0) {
+    	timer.stop();
+		question.empty();
+		answer.empty();
+		question.append("<h1>How do you run out of time? It's so easy.</h1>");
 		index++;
 		counter++;
-		newQuestion();
+		setTimeout(function() {newQuestion();}, 3000);
     }
   }
 };
@@ -86,33 +91,33 @@ function reset() {
 	score = 0;
 	questionIndex = 0;
 	index = 0;
-	$("#questionId").append(trivia[0].q);
-	$("#answerId").append(trivia[0].a1);
-	$("#answerId").append(trivia[0].a2);
-	$("#answerId").append(trivia[0].a3);
+	question.empty();
+	answer.empty();
+	question.append(trivia[0].q);
+	answer.append(trivia[0].a1).append(trivia[0].a2).append(trivia[0].a3);
 	timer.reset();
 	timer.start();
 }
 
 function questionRight() {
-	timer.reset();
+	timer.stop();
 	score++;
-	$("#questionId").empty();
-	$("#answerId").empty();
-	$("#questionId").append("<h1>"+trivia[index].r+"</h1>");
+	question.empty();
+	answer.empty();
+	question.append("<h1>"+trivia[index].r+"</h1>");
 	index++;
 	counter++;
-	setTimeout(function() {newQuestion();}, 2500);
+	setTimeout(function() {newQuestion();}, 3500);
 }
 
 function questionWrong() {
-	timer.reset();
-	$("#questionId").empty();
-	$("#answerId").empty();
-	$("#questionId").append("<h1>"+trivia[index].w+"</h1>");
+	timer.stop();
+	question.empty();
+	answer.empty();
+	question.append("<h1>"+trivia[index].w+"</h1>");
 	index++;
 	counter++;
-	setTimeout(function() {newQuestion();}, 2500);
+	setTimeout(function() {newQuestion();}, 3500);
 }
 
 function newQuestion() {
@@ -120,14 +125,14 @@ function newQuestion() {
 		timer.stop();
 		setTimeout(function() {$("#questionId").html("<h1>You got " + score + " right.</h1>");}, 10);
 		setTimeout(function() {reset();}, 5000);
+		return;
 	}
 	timer.reset();
-	$("#questionId").empty();
-	$("#answerId").empty();
-	$("#questionId").append(trivia[index].q);
-	$("#answerId").append(trivia[index].a1);
-	$("#answerId").append(trivia[index].a2);
-	$("#answerId").append(trivia[index].a3);
+	timer.start();
+	question.empty();
+	answer.empty();
+	question.append(trivia[index].q);
+	answer.append(trivia[index].a1).append(trivia[index].a2).append(trivia[index].a3);
 }
 
 window.onload = function() {
@@ -135,8 +140,6 @@ window.onload = function() {
 	$(document).on("click", ".wrong", questionWrong);
 };
 
-$("#questionId").append(trivia[0].q);
-$("#answerId").append(trivia[0].a1);
-$("#answerId").append(trivia[0].a2);
-$("#answerId").append(trivia[0].a3);
+question.append(trivia[0].q);
+answer.append(trivia[0].a1).append(trivia[0].a2).append(trivia[0].a3);
 timer.start();
