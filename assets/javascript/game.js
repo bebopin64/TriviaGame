@@ -76,7 +76,7 @@ var timer = {
 		question.append("<h1>How do you run out of time? It's so easy.</h1>");
 		index++;
 		counter++;
-		setTimeout(function() {newQuestion();}, 3000);
+		setTimeout(function() {newQuestion();}, 4000);
     }
   }
 };
