@@ -1,0 +1,49 @@
+.paper {
+	width: 60%; 
+	height: 702px; 
+	margin: 60px auto; 
+	padding-top: 66px; 
+	background-image: url(../images/minBackground.png); 
+	padding-left: 80px;
+}
+
+.time {
+	text-align: center;
+	padding: 4px;
+	width: 190px;
+	height: 140px; 
+	background-image: url("../images/timer.png");
+	position: absolute;
+	z-index: 10;
+	left: 1.4%;
+	top: 0px;
+}
+
+.timeNumbers {
+	font-family: 'Nova Square', cursive;
+	margin-top: 38px;
+	margin-left: 12px;
+	font-size: 50px;
+}
+
+.header {
+	font-size: 19px;
+}
+
+.question {
+	position: relative;
+	margin-bottom: -10px;
+	margin-top: 49px;
+	line-height: 295%;
+}
+
+.answer {
+	line-height: 170%;
+	margin-left: -37px;
+}
+
+body {
+	background-image: url('../images/purty_wood.png'); 
+	font-family: 'Just Another Hand', cursive; 
+	letter-spacing: 4px;
+}
